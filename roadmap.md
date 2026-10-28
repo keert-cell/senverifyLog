@@ -1,0 +1,12 @@
+# SensVerify-24-7 roadmap
+- [ ] Separate Home, Helper, and Admin content and make bottom-tab switching reliable.
+- [ ] Verify all three tabs and sign-out with an authenticated session.
+- [ ] Make sign-out clear protected cached data and reach login even if the sign-out request stalls.
+- [x] Backend: profiles, roles, scans, realtime
+- [x] Fixed OTP 606819 phone login (+91)
+- [x] SIM SMS endpoint ?sms=&user_phone=
+- [x] Dashboard (score circle, stats, trend, alerts feed, LIVE, 24/7 banner, 5s refresh)
+- [x] 5 scanners (SMS, Email, Call, URL & QR, Fake News)
+- [x] Chatbot Telugu/English + Translator
+- [x] Admin users table
+- [ ] GitHub push (user connects GitHub in settings)
