@@ -1,26 +1,21 @@
-# Tiny Seedling Studio
+# Routes
 
-create new project
+TanStack Start uses **file-based routing**. Every `.tsx` file in this directory
+defines a route. Do **not** create `src/pages/`, `src/routes/_app/index.tsx`, or
+`app/layout.tsx` — those are Next.js / Remix conventions. The only root layout
+is `src/routes/__root.tsx`.
 
-This project was built with [Lovable](https://lovable.dev).
+## Conventions
 
-**Live app**: https://tiny-seedling-studio.lovable.app
+| File | URL |
+| --- | --- |
+| `index.tsx` | `/` |
+| `about.tsx` | `/about` |
+| `users/index.tsx` | `/users` |
+| `users/$id.tsx` | `/users/:id` (dynamic — bare `$`, no curly braces) |
+| `posts/{-$category}.tsx` | `/posts/:category?` (optional segment) |
+| `files/$.tsx` | `/files/*` (splat — read via `_splat` param, never `*`) |
+| `_layout.tsx` | layout route (renders children via `<Outlet />`) |
+| `__root.tsx` | app shell — wraps every page; preserve `<Outlet />` |
 
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/4b7bf974-ae05-4bef-ba94-064dfb54fbcb).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+`routeTree.gen.ts` is auto-generated. Don't edit it by hand.
